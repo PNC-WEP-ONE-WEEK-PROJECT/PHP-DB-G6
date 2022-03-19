@@ -1,0 +1,107 @@
+textarea::-webkit-scrollbar{
+    width: 0;
+}
+textarea{
+    font-size: 18px;
+    font-weight: 400;
+    outline: none;
+    width: 100%;
+    resize: none;
+    border: none;
+    border-bottom: 2px solid rgb(168, 168, 168);
+}
+.card-post{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+
+/* post ======================================= */
+
+#display_image{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    background-position: center;
+    /* background-size: cover; */
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+#file{
+    display: none;
+}
+
+
+/* user profile ================================= */
+.cover{
+    height: 260px;
+    width: 100%;
+    background-image: url('images/image-62296add80e539.04751305.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.user-name{
+    height: 80px;
+    width: 100%;
+    padding-left: 230px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* user profile =============== */
+.profile-pic-div{
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    top: 53%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(167, 167, 167);
+}
+#photo{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+#file{
+    display: none;
+}
+#uploadBtn{
+    width: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+/* --------cover------- */
+#cover-dropdown{
+    text-align: left;
+}
+
+/* --------user infomation-------- */
+.user-infomation{
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* --------button create post--------- */
+#create-post{
+    background-color: #D22EE0;
+    border: none;
+    outline: #D22EE0;
+}

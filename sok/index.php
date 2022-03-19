@@ -26,9 +26,37 @@
     </div>
     <div class="body-c2">
         <?php 
-        $time = [1,2,3,3,3,3,3,3,3,3];
-        foreach ($time as $t):
+            $db = new PDO("mysql:host=localhost;dbname=facebook_g6db", 'root', '');
+            // // $statement = $db->query("SELECT count(*) from posts;");
+            // function allusers()
+            // {
+            //     global $db;
+            //     $statement = $db->query("SELECT id FROM users;");
+            //     $posts = $statement->fetchAll();
+            //     echo $posts;
+            //     return $posts;
+        
+            // }
+
+            // echo allusers();
+            
         ?>
+        <script>
+            let user =
+         <?php 
+            function allusers()
+                {
+                    global $db;
+                    $statement = $db->query("SELECT id FROM users;");
+                    $posts = $statement->fetchAll();
+                    return $posts;
+                    
+                }
+    
+            allusers();
+            ?>
+            console.log(user);
+        </script>
         <div class="card">
             <div class="card-left">
                 <div class="img">
@@ -43,9 +71,6 @@
                 <button>Cancle</button>
             </div>
         </div>
-        <?php
-        endforeach;
-        ?>
     </div>
 </body>
 </html>

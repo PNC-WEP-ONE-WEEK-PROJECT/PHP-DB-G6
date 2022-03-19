@@ -27,3 +27,26 @@ create database facebook_g6db;
 alter table posts add foreign key (userid) references users(id);
 alter table comments add foreign key (userid) references users(id);
 alter table comments add foreign key(postid) references posts (id);
+
+
+insert into posts (description,userid) values 
+("Hello everyone how are you doing?",36),
+("Hello every on in here how are you to day?",36),
+("Hello every on in here how are you to day?",36),
+("Hello every on in here how are you to day?",36);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

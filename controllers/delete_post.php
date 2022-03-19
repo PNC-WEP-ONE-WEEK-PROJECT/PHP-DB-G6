@@ -1,4 +1,2 @@
 <?php
-/**
- * Your code here
- */
+// connect to database
