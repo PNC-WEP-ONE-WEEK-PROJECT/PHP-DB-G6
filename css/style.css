@@ -1,0 +1,572 @@
+textarea::-webkit-scrollbar{
+    width: 0;
+}
+textarea{
+    font-size: 18px;
+    font-weight: 400;
+    outline: none;
+    width: 100%;
+    resize: none;
+    border: none;
+    border-bottom: 2px solid rgb(168, 168, 168);
+}
+.card-post{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+
+/* post ======================================= */
+
+#display_image{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    background-position: center;
+    /* background-size: cover; */
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+#file{
+    display: none;
+}
+
+
+/* user profile ================================= */
+.cover{
+    height: 260px;
+    width: 100%;
+    background-image: url('../uploads/image-62296af7108246.04371375.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.user-name{
+    height: 80px;
+    width: 100%;
+    padding-left: 230px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* user profile =============== */
+.profile-pic-div{
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    top: 53%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(167, 167, 167);
+}
+#photo{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+#file{
+    display: none;
+}
+#uploadBtn{
+    width: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+/* --------cover------- */
+#cover-dropdown{
+    text-align: left;
+}
+
+/* --------user infomation-------- */
+.user-infomation{
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* --------button create post--------- */
+#create-post{
+    background-color: #D22EE0;
+    border: none;
+    outline: #D22EE0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* container ================================================================================================================================================================================*/
+.container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* container-header */
+.header-container {
+    margin: auto;
+    width: 75%;
+    text-align: center;
+}
+.header-container h1 {
+    color: blue;
+    font-weight: bold;
+}
+.header-container h1:hover {
+    font-size:42px;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+/* container-body */
+.body-container {
+    width: 65%;
+    margin: auto;
+    margin-top: 20px;
+    /* background:rgb(100, 121, 241); */
+    text-align: center;
+    border-radius: 20px;
+}
+.title-container {
+    margin-top: 15px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+.body-container:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 20px;
+}
+.body-container form{
+   width: 100%;
+   margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   padding: 10px;
+   border-radius: 20px;
+   text-align: center;
+}
+.input-g1 {
+    width:45%;
+    padding: 5px;
+    margin: auto;
+}
+.input-g1 input,select,#email,#location {
+   width: 100%;
+   border-radius: 7px;
+   border: none;
+   height: 40px;
+   font-size: 15px;
+   cursor:pointer;
+   margin-top: 15px;
+   padding: 10px;
+}
+.input-g2 {
+    width:95%;
+    padding: 5px;
+    margin: auto;
+}
+.input-g2 input {
+    width: 100%;
+}
+.btn-g {
+    
+    width: 90%;
+    margin: auto;
+    text-align: end;
+}
+.btn-g button {
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.btn-g button:hover {
+    background-color: blue;
+    color: white;
+}
+/* ================================================================================================================================================================================================ */
+
+
+/* home page */
+.home-page {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.home-header {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    text-decoration: none;
+    background-color: rgb(104, 98, 91);
+    color: white;
+}
+.home-body {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 150px;
+}
+.post-card {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 50px;
+    background-color: rgb(197, 197, 202);
+}
+.post-card-header {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-card-header .menu1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.post-card-header .menu1 .menu-left {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.post-card-header .menu1 .menu-left .img {
+    width: 25%;
+}
+.post-card-header .menu1 .menu-left .img img {
+   width: 35%;
+    border-radius: 45%;
+}
+.post-card-header .menu1 .menu-left .menu-left-title {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -40px;
+} 
+.post-card-header .menu1 .menu-left .menu-left-title h4 {
+    margin-top: -2px;
+}
+.post-card-header .menu1 .menu-left .menu-left-title p,.logo {
+    margin-top: -20px;
+}
+.post-card-header .menu1 .menu-left .menu-left-title p {
+    font-size: 13px;
+}
+.post-card-header .menu1 .menu-right {
+    justify-content: end;
+    width: 20%;
+    margin-right: -45px;
+    cursor: pointer;
+}
+.setting-btn {
+    margin-right: 50px;
+    margin-top: -15px;
+}
+.post-card-header .menu1 .menu-right img:hover {
+   width: 25%;
+}
+.post-card-header .menu2 {
+    width: 95%;
+    margin: auto;
+    cursor: pointer;
+}
+.post-card-body {
+    width: 100%;
+    margin: auto;
+}
+.post-card-footer {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.post-card-footer .btn-group {
+    cursor: pointer;
+    width: 30%;
+    margin: auto;
+    margin-left: 50px;
+}
+.post-card-footer .btn-group:hover {
+    font-weight: bold;
+}
+/* ================================================================================================================================================================================================================== */
+.container2 {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap:wrap ;
+}
+.header-c2 {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: fixed;
+    text-decoration: none;
+    background-color: rgb(235, 236, 236);
+    text-align:center;
+    top: 0;
+}
+.header-c2 .title {
+    color: black;
+}
+.header-c2 .form form{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.header-c2 .form input,button {
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.header-c2 .form input {
+    outline: none;
+    width: 60%;
+}
+.header-c2 .form input:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+.header-c2 .form button {
+    width: 20%;
+    background-color: blue;
+    color:white;
+}
+.header-c2 .form button:hover {
+    width: 21%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.header-c2 .footer {
+    text-align: start;
+    width: 90%;
+    margin: auto;
+    border: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 20px;
+}
+.header-c2 .footer:hover {
+    width: 98%;
+    cursor: pointer;
+}
+.body-c2 {
+    width: 95%;
+    margin: auto;
+    margin-top: 100px;
+    margin-top: 50px;
+}
+.body-c2 .card {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.body-c2 .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.body-c2 .card .card-left {
+    width: 30%;
+    margin: auto 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.body-c2 .card .card-left .img {
+    width: 20%;
+    margin: auto 10px;
+}
+.body-c2 .card .card-left img {
+    width: 100%;
+    border-radius: 50%;
+}
+.body-c2 .card .card-left .userernme  h6{
+    font-size: 30px;
+}
+.body-c2 .card-right {
+    width: 60%;
+    align-items: center;
+    margin: auto;
+    margin-right: -300px;
+    
+}
+.body-c2 .card-right button {
+    padding: 10px;
+    width: 25%;
+    margin: auto 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+}
+.body-c2 .card-right button:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+/* ============================================================================================================================================================ */
+/* comment blank */
+.comment-body body {
+    background-color: rgb(156, 151, 151);
+    display: flex;
+    flex-wrap: wrap;
+}
+.comment-body {
+    width: 75%;
+    margin: auto;
+    height: 98vh;
+   
+}
+.comment-body .card {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.comment-body .card .profile {
+    margin-top: 10px;
+    width: 40%;
+    height: 30%;
+}
+.comment-body .card .profile img,.comment-footer .profile img {
+    border-radius: 50%
+}
+.comment-body .card .profile img:hover {
+    cursor: pointer;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    outline: pink;   
+}
+.comment-body .card .comment-box {
+    margin-top: 10px;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    
+}
+
+.comment-body .card .comment-box .comment-text {
+    width: 100%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(238, 237, 241);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+.comment-body .card .comment-box .comment-info {
+    width: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+.comment-body .card .comment-box .comment-info ul {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.comment-body .card .comment-box .comment-info ul li {
+    list-style: none;
+}
+.comment-footer{
+   width: 75%;
+    bottom: 0;
+    background-color: rgb(219, 221, 250);
+    overflow: hidden;
+    position:fixed;
+    margin:auto 150px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.comment-footer .profile {
+    width: 25%;
+    margin: auto ;
+}
+.comment-footer .profile img {
+    width: 25%;
+    margin: auto 30px auto 30px;
+}
+.comment-footer .form {
+    width: 75%;
+    margin: auto;
+}
+.comment-footer .form form {
+    width: 100%;
+    margin: auto;
+}
+.comment-footer .form form input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    outline: none;
+    
+}
+.comment-footer .form form input:hover {
+    width: 81%;
+    border: 1px solid pink;
+    background-color: rgb(151, 151, 243);
+    color: white;
+    outline: none;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.comment-footer .form form button {
+    border: none;
+    background-color: blue;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

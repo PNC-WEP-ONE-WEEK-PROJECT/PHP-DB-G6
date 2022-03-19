@@ -1,20 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-</head>
-<body class=" d-flex justify-content-center" style="background-color: rgb(209, 209, 209);">
+<?php session_start(); ?>
+<!-- get data value from database -->
+
+<?php
+require_once('../models/post.php');
+// $id = $_GET['id'];
+$user_data = getItemById($_SESSION['user_id']);
+?>
+
+
+
+
+
+
+
+
+<!-- reques header -->
+<?php require_once('../templates/header.php');?>
     <div class="w-50 ">
         <div class="p-2 d-flex justify-content-around bg-light">
             <h2><a href="logIn.html" class="text-black"><i class="bi bi-house-door f text-black"></i></a></h2>
             <h2><a href="logIn.html"><i class="bi bi-people text-black"></i></a></h2>
-            <h2><a href="logIn.html"><i class="bi bi-person-circle text-black"></i></a></h2>
+            <h2><a href="user.php"><i class="bi bi-person-circle text-primary"></i></a></h2>
             
         </div>
         <div class="align-items-center justify-content-center d-flex">
@@ -26,27 +32,25 @@
 
                                 <ul class="dropdown-menu" id="cover-dropdown" aria-labelledby="dropdownMenuButton1">
                                     <li id="remove_cover"><a class="dropdown-item" href="#" onclick="removeCover()">Remove Cover</a></li>
-                                    <li><a class="dropdown-item" href="#"><input type="file" id="file_cover" hidden><label for="file_cover">Change Cover</label></a></li>
+                                    <li><a class="dropdown-item" href="#"><input type="file" id="file_cover" name="cover" hidden><label for="file_cover">Change Cover</label></a></li>
                                 </ul>
                         </div>
-                        <!-- <img src="images/image-62296add80e539.04751305.jpg" alt=""> -->
                     </div>
-                    <div class="user-name align-items-center d-flex"><h4>Hello world</h4></div>
+                    <div class="user-name align-items-center d-flex"><h4 id="username"><?php echo $user_data['name'] ?></h4></div>
                     <div class="profile-pic-div">
-                        <img id="photo" class="rounded-circle" src="images/image-62296add80e539.04751305.jpg"  data-holder-rendered="true" alt="" srcset="">
-                        <input type="file" id="file">
+                        <img id="photo" class="rounded-circle" src="../uploads/image-62296add80e539.04751305.jpg"  data-holder-rendered="true" alt="" srcset="">
+                        <input type="file" id="file" name="profile">
                         <label for="file" id="uploadBtn">choose image</label>
                     </div>
                 </div>
                 <div class="user-infomation mt-4 p-3">
-                    <div class="d-flex"><strong>Email &#160&#160&#160&#160&#160&#160&#160:&#160&#160</strong><p>Hello world</p></div>
-                    <div class="d-flex"><strong>Phone &#160&#160&#160&#160&#160:&#160&#160</strong><p>hello world</p></div>
-                    <div class="d-flex"><strong>Location &#160:&#160&#160</strong><p>how are you</p></div>
-                    <div class="d-flex"><strong>Datebirth:&#160&#160</strong><p>where are you</p></div>
-                    <div class="d-flex"><strong>Gender &#160&#160&#160:&#160&#160</strong><p>morning</p></div>
+                    <div class="d-flex"><strong>Email &#160&#160&#160&#160&#160&#160&#160:&#160&#160</strong><p id="user_email"><?php echo $user_data['email'] ?></p></div>
+                    <div class="d-flex"><strong>Location &#160:&#160&#160</strong><p><?php echo $user_data['locationaddress'] ?></p id="user_location"></div>
+                    <div class="d-flex"><strong>Datebirth:&#160&#160</strong><p><?php echo $user_data['dateofbirth'] ?></p id="user_datebirth"></div>
+                    <div class="d-flex"><strong>Gender &#160&#160&#160:&#160&#160</strong><p><?php echo $user_data['gender'] ?></p id="user_gender"></div>
                     <div class="d-flex w-100 gap-2">
                         <button class="btn btn-primary w-50 fw-bold" type="button" id="view-friends">Friends</button>
-                        <button class="btn btn-primary w-50 fw-bold" type="button" id="create-post">Create Post</button>
+                        <button class="btn btn-primary w-50 fw-bold" type="button" id="create-post"><a href="create_post_view.php?id=<?php echo $user_data['id']?>">Create Post</a></button>
                     </div>
                 </div>
             </div>
@@ -86,10 +90,10 @@
 
                 reader.addEventListener('load', function(){
                     img.setAttribute('src', reader.result);
+                    
                 });
                 
                 reader.readAsDataURL(choosedFile);
-
             }
         })
     </script>
@@ -109,7 +113,8 @@
                 // console.log(`${uploaded_image}`);
             });
             reader.readAsDataURL(this.files[0]);
-        })
+            
+            })
 
         function removeCover(){
             console.log('Hello world how are you?')
@@ -121,8 +126,7 @@
         }
     </script>
 
+
     
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<!-- request footer -->
+<?php require_once('../templates/footer.php');?>
