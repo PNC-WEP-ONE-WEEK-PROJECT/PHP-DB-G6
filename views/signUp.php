@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <?php
+<?php session_start() ?>
+<?php require_once('../models/post.php') ?>
 
+<!-- Check the input of user to create new account -->
+    <?php
         $db = new PDO("mysql:host=localhost;dbname=facebook_g6db", 'root', '');
         $condition = !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['date']) && !empty($_POST['gender']) && !empty($_POST['email']) && !empty($_POST['location']);
         if ($_SERVER['REQUEST_METHOD']=='POST' && $condition){
@@ -25,7 +22,20 @@
                 ':date' => $date,
                 ':location' => $location 
             ]);
-        }  
+            $items = getItems();
+            $user_id = 0;
+            foreach ($items as $item){
+                if ($password==$item['password']){        
+                    $_SESSION['user_id'] = $item['id'];
+                    header('location: user.php?id='.$item['id']);
+                }
+                // $user_id = $item['id'];
+            
+            }
+        }
+
+
+        
         // DATA
         $errorusername ="";
         $errorpassword = "";
@@ -37,7 +47,9 @@
         // VALIDATION USERNAME
         function usernamevali (){
             if (empty($_POST['username'])){
-                return false;
+                return 1;
+            }else if (ctype_alnum($_POST['username'])){
+                return 2;
             }
         }
 
@@ -93,7 +105,7 @@
         }
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             // check username
-            if (usernamevali()==false){
+            if (usernamevali()==1){
                 $errorusername = "Please input username!";
             }
             // check password
@@ -131,14 +143,22 @@
 
      
     ?>
+
+
+
+
+
+<!-- request header -->
+<?php require_once('../templates/header.php');?>
+
     <!-- container -->
-    <div class="container">
+    <div class="containeri">
         <!-- header container -->
         <div class="header-container">
             <h1>Facebook</h1>
         </div>
         <!-- body container -->
-        <div class="body-container">
+        <div class="body-container bg-primary">
             <div class="title-container">
                 <h1>Sign Up</h1>
             </div>
@@ -146,38 +166,47 @@
             <form action="" method="POST">
                 <div class="input-g1">
                     <input type="text" name="username" id="username" placeholder="username">
-                    <div class="text-error" ><p><?php echo $errorusername; ?></p></div>
+                    <small class="form-text text-danger"> <?php echo $errorusername; ?></small>
                 </div>
+
                 <div class="input-g1">
                     <input type="password" name="password" id="password" placeholder="password">
-                    <div class="text-error"><p><?php echo $errorpassword; ?></p></div>
+                    <small class="form-text text-danger"> <?php echo $errorpassword; ?></small>
                 </div>
+
                 <div class="input-g1">
                     <input type="date" name="date" id="date" placeholder="date of birth">
-                    <div class="text-error"><p><?php echo $errordate; ?></p></div>
+                    <small class="form-text text-danger"> <?php echo $errordate; ?></small>
                 </div>
+
                 <div class="input-g1">
                     <select name="gender">
                         <option value="" selected>gender</option>
                         <option value="m">M</option>
                         <option value="f">F</option>
                     </select>  
-                    <div class="text-error"><p><?php echo $errorgender; ?></p></div>
+                    <small class="form-text text-danger"> <?php echo $errorgender; ?></small>
                 </div>
+
                 <div class="input-g2">
                     <input type="text" name="email" id="email" placeholder="Email address">
-                    <div class="text-error"><p><?php echo $erroremail; ?></p></div>
+                    <small class="form-text text-danger"> <?php echo $erroremail; ?></small>
                 </div>
                 <div class="input-g2">
                     <input type="text" name="location" id="location" placeholder="Location address">
-                    <div class="text-error"><p><?php echo $errorlocation; ?></p></div>
+                    <small class="form-text text-danger"> <?php echo $errorlocation; ?></small>
                 </div>
                 <div class="btn-g">
                     <button class="creat-acc">Create Account</button>
-                    <button class="log-in">Log In</button>
+                    <button class="log-in"><a href="../index.php">Log In</a></button>
                 </div>
             </form>
         </div>
     </div>
-</body>
+
+<?php 
+
+?>
+<!-- request footer -->
+<?php require_once('../templates/footer.php')?>
 </html>
