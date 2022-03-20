@@ -43,6 +43,21 @@ function getItemById($id)
     ]);
     return $statement->fetch();
 }
+/**
+ * Get a single item
+ * @param integer $id : the item id
+ 
+ * @return associative_array: the item related to given item id
+ */
+function getUserDataById($id)
+{
+    global $db;
+    $statement = $db->prepare("SELECT * FROM posts WHERE userid = :id ");
+    $statement->execute([
+        ':id' => $id
+    ]);
+    return $statement->fetchAll();
+}
 
 
 /**

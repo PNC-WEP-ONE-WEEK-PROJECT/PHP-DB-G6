@@ -12,10 +12,8 @@ if (isset($_FILES['image'])) {
     $local_image="images/";
     $upload = move_uploaded_file($tmp_name, $local_image.$img);
 }
-echo $text;
-echo $img;
-echo $userid;
-
-createPosts($text, $img, $userid);
+if (!empty($img) or !empty($text)){
+    createPosts($text, $img, $userid);
+}
 
 header('location: ../views/user.php');

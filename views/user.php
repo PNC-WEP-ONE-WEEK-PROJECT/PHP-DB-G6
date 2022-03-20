@@ -5,6 +5,7 @@
 require_once('../models/post.php');
 // $id = $_GET['id'];
 $user_data = getItemById($_SESSION['user_id']);
+$data_user = getUserDataById($_SESSION['user_id'])
 ?>
 
 
@@ -55,7 +56,49 @@ $user_data = getItemById($_SESSION['user_id']);
                 </div>
             </div>
         </div>
+
+        <?php foreach ($data_user as $data) {?>
+            <div class="">
+                <div class=" bg-light mt-3 w-100 h-100 " style="border-radius: 5px;">
+                    <div class="d-flex justify-content-between w-100 p-3">
+                        <div class="d-flex align-items-center gap-4">
+                            <img src="../uploads/image-62296add80e539.04751305.jpg" class="rounded-circle" alt="Cinque Terre" style="height: 70px; width: 70px;">
+                            <h6><?php echo $user_data['name'] ?></h6>
+                        </div>
+                        <div class="dropdown dropstart text-end border-1">
+                            <i class="bi bi-three-dots m-1 fs-3 text-secondary" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-cover"></i>
+
+                            <ul class="dropdown-menu" id="cover-dropdown" aria-labelledby="dropdownMenuButton1">
+                                <li id="remove_cover"><a class="dropdown-item" href="#" onclick="removeCover()">Remove Cover</a></li>
+                                <li><a class="dropdown-item" href="#"><input type="file" id="file_cover" name="cover" hidden><label for="file_cover">Change Cover</label></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-100 h-75">
+                        <p class="mt-1" style="margin: 0 20px 0 20px;"><?php echo $data['description'] ?></p>
+                        <div style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
+                            <?php if (!empty($data['image'])){ ?>
+                            <img src="../controllers/images/<?php echo $data['image'] ?>" alt="" class="mt-3 shadow-box-example z-depth-1" style="border-radius: 2px;" >
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="cardp-footer d-flex justify-content-around" style="border-top: 1px solid rgba(158, 158, 158, 0.767); padding-top: 10px">
+                        <div class="like">
+                            <i class="bi bi-hand-thumbs-up fs-4"></i>
+                            <p>55 K</p>
+                        </div>
+                        <div class="comment">
+                        <i class="bi bi-chat-left-text fs-4"></i>
+                        <p>200 K</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <?php } ?>
+
     </div>
+
+
     
 
     <!-- profile -->
