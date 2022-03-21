@@ -1,5 +1,5 @@
 <?php
 require_once "../models/delete_post.php";
-$id = $_POST['id'];
+$id = $_GET['id'];
 deleteItem($id);
-header('location: ../views/home.php');
+header('location: ../views/user.php');

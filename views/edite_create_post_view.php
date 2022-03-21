@@ -1,4 +1,11 @@
 <?php session_start(); ?>
+<?php 
+require_once('../models/post.php');
+$id = $_GET['id'];
+$dataPost = getOnePostById($id);
+
+?>
+
 
 <!-- request header -->
 <?php require_once('../templates/header.php');?>
@@ -6,19 +13,12 @@
 
 
 <div class="w-50 ">
-    <!-- menu link to other page -->
-        <div class="p-2 d-flex justify-content-around bg-light">
-            <h2><a href="home.php" class="text-black"><i class="bi bi-house-door f text-black"></i></a></h2>
-            <h2><a href="showfriens.php"><i class="bi bi-people text-black"></i></a></h2>
-            <h2><a href="user.php"><i class="bi bi-person-circle text-black"></i></a></h2> 
-        </div>
-
 
         <div class="mt-3 p-3 card-post align-items-center justify-content-center d-flex">
-            <form action="../controllers/create_post.php" method="post" class="w-75" enctype="multipart/form-data">
+            <form action="../controllers/edite_user_post.php?id=<?php echo $id ?>" method="post" class="w-75" enctype="multipart/form-data">
 
             <!-- The describtion of user post -->
-                <textarea type='text' class="p-2 mt-5" placeholder="Text" name="description"></textarea>
+                <textarea type='text' class="p-2 mt-5" placeholder="Text" name="description"><?php echo $dataPost['description'] ?></textarea>
 
             <!-- upload image for user post -->
                 <input type="file" class="mt-5 mb-4" id="file" accept="image/png, image/jpg"  name="image">
@@ -26,17 +26,16 @@
 
 
             <!-- place for show image user select -->
-                <div id="display_image"><img></div>
+                <div id="display_image"><img src="../controllers/images/<?php echo $dataPost['image'] ?>"></div>
             
             <!-- group of button -->
                 <div class="d-flex justify-content-end mt-lg-5">
 
                 <!-- Button to click post -->
-                    <!-- <button type="submit" name="submit" class="btn btn-primary m-2 fw-bold w-25" value="upload">Post</button> -->
                     <input type="submit" name="submit" class="btn btn-primary m-2 fw-bold w-25" value="upload">
                 
                 <!-- button to click concel post -->
-                    <button type="button" class="btn btn-secondary m-2 fw-bold w-25"><a href="create_post_view.html" >Concel</a></button>
+                    <button type="button" class="btn btn-secondary m-2 fw-bold w-25"><a href="user.php" >Concel</a></button>
                 </div>
             </form>
         </div>

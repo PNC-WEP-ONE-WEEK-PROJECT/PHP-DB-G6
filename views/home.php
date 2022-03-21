@@ -23,11 +23,23 @@
             </div>
         </div>
         <?php
+
             require_once "../models/post.php";
             $posts = returnallpostdata();
+            $idelement = 0;
             foreach ($posts as $post):
+                $condition = TRUE;
+                $idelement += 1;
+                $datahidden = getdatahidden();
+                foreach($datahidden as $datah){
+                    if ($idelement == $datah['postsid']){
+                        $condition = FALSE;
+                    }
+                }
         ?>
-        <div class="cardp">
+        
+
+        <div class="cardp" id="post<?= $idelement?>" style="display:<?php if($condition) { echo "block";} if(!$condition){echo "none";}?>;">
             <!-- header of card post -->
             <div class="cardp-header">
                 <div class="headerleft">
@@ -44,11 +56,8 @@
                     </div>
                 </div>
                 <div class="headerright">
-                    <div class="btn-edit">
-                        <a href="edit_view.php?id=<?php echo $post['id'];?>"><button>Edit</button></a>
-                    </div>
                     <div class="btn-delete">
-                        <a href="../controllers/delete_post.php?id=<?php echo $post['id']?>;"><button>delete</button></a>
+                        <a href="../controllers/hidden.php?id=<?= $idelement;?>" onclick="hiddenpost('post<?= $idelement?>')">hidden</a>
                     </div>
                 </div>
             </div>
@@ -93,4 +102,5 @@
     </div>
 </div>
 </body>
+
 </html>

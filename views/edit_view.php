@@ -18,13 +18,20 @@
         <form action="../controllers/edit.php" class="w-75" method="post" enctype="multipart/form-data">
             <textarea class="p-2 mt-5" name="text-input-edit" w-100><?php echo $post['description'];?></textarea>
             <input type="hidden" value="<?= $post['id']?>" name='text_edit'>
+            <?php
+                if (!empty($_POST['image'])):
+            ?>
             <input type="file" name ="image" class="mt-5 mb-4" id="file" accept="image/png, image/jpg">
             <input type="hiddent" name="file" value="<?= $post['image'];?>">
             <label for="file" id="btnupload" class="btn btn-primary mt-3 mb-3">Upload Image</label>
             <div id="display_image"><img></div>
             <div class="d-flex justify-content-end mt-lg-5">
+            <?php
+                endif;
+            ?>
                 <button type="submit" class="btn btn-primary m-2 fw-bold w-25">Post</button>
                 <a href="home.php"><button type="submit" class="btn btn-secondary m-2 fw-bold w-25">Concel</button></a>
+                <a href="home.php"><button class="btn btn-secondary m-2 fw-bold w-25">Concel</button></a>
             </div>
         </form>
     </div>

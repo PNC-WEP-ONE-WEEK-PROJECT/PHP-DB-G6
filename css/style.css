@@ -38,7 +38,8 @@ img{
 
 /* user profile ================================= */
 .cover{
-    height: 260px;
+    /* margin-top: -15px; */
+    height: 300px;
     width: 100%;
     background-image: url('../uploads/image-62296af7108246.04371375.jpg');
     background-position: center;
@@ -64,11 +65,11 @@ img{
     overflow: hidden;
     border: 1px solid rgb(167, 167, 167);
 }
-#photo{
+/* #photo{
     height: 100%;
     width: 100%;
     border-radius: 50%;
-}
+} */
 #file{
     display: none;
 }
@@ -208,7 +209,7 @@ img{
 }
 .cardp-body {
     width: 100%;
-    background-color: blue;
+    /* background-color: blue; */
     height: 50vh;
 }
 .cardp-footer {
@@ -236,33 +237,33 @@ img{
     top: 0;
     overflow: hidden;
     position: sticky;
-    z-index: 1;
+    z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .showallusers .row {
     width: 100%;
-    margin-top: 10px;
     align-items: center;
+    justify-content: space-between;
+    display: flex;
 }
 .showallusers .row .left {
-    width: 50%;
+    width: 65%;
     display: flex;
-    flex-wrap: wrap;
 }
 .showallusers .row .left img {
-    width: 70px;
+    width: 80px;
     border-radius: 50%;
 }
 .showallusers .row .left p {
-    margin: 10px auto;
+    margin: 30px;
+    font-weight: bold;
+    font-size: 16px;
 }
 .showallusers .row .right {
-    width: 50%;
     text-align: end;
 }
 .showallusers .row .right button {
     padding: 10px;
-    background-color: blue;
     color: white;
     width:90px;
     border-radius: 5px;
