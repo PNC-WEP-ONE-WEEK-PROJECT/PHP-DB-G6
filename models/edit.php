@@ -15,7 +15,7 @@ function getItemById($id)
 function updateItem($id, $description,$img)
 {
     global $db;
-    $statement =  $db->prepare("UPDATE  posts set description=:description,images=:img where id=:id");
+    $statement =  $db->prepare("UPDATE  posts set description=:description,image=:img where id=:id");
     $statement ->execute([
         ':description'=> $description,
         ':id' => $id,

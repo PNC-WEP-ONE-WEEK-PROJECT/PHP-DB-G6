@@ -142,7 +142,7 @@ img{
 }
 .cardp {
     width: 100%;
-    background-color: rgb(231, 223, 212);
+    background-color: rgb(173, 170, 165);
     margin: 100px auto auto auto;
     display: flex;
     flex-wrap: wrap;
@@ -215,11 +215,15 @@ img{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    text-align: center;
+    
+    background-color: aliceblue;
 }
-.cardp-footer .like,.comment {
+.cardp-footer .like,.commentbtn {
     width: 10%;
     margin: auto;
+    align-items: center;
+   margin-top: 10px;
 }
 /* show-------------------------------------------------------------------------------------------------------------------------------- */
 .showallusers {
@@ -335,5 +339,96 @@ img{
     cursor: pointer;
     text-decoration: none;
 }
+
+/* comment */
+.cardp .comment-site {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.cardp .comment-site .left {
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+}
+.cardp .comment-site .left .profile {
+    width: 30%;
+}
+.cardp .comment-site .left .profile img {
+    border-radius: 50%;
+}
+.cardp .comment-site .right {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin:15px auto;
+}
+.cardp .comment-site .right form {
+    width: 95%;
+    margin-top: 10px;
+}
+.cardp .comment-site .right form input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+.cardp .comment-site .right form button {
+    padding: 10px;
+    border: none;
+    background-color: rgb(173, 170, 165);
+    color: blue;
+}
+.comment-show-page {
+    width: 90%;
+    margin: auto;
+}
+.commentp {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.commentp .left {
+    width: 30%;
+    margin: auto;
+
+    
+}
+.commentp .left .profile {
+    width: 20%;
+}
+.commentp .left .profile img {
+    border-radius: 50%;
+}
+.commentp .right {
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -350px;
+}
+.commentp .right .above {
+    width: 90%;
+    margin: auto;
+    background:white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+.commentp .right .below {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
 
 

@@ -20,7 +20,14 @@ function deleteItem($id)
     ]);
     return ($statement->rowCount()==1);
 }
-
+function deletecomment ($id){
+    global $db;
+    $statement =  $db->prepare("DELETE FROM comments where postid=:id");
+    $statement ->execute([
+        ':id' => $id
+    ]);
+    return ($statement->rowCount()==1);
+}
 function deleteuser ($id){
     global $db;
     $statement = $db->prepare("DELETE FROM users where id=:id");

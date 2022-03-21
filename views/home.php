@@ -36,7 +36,7 @@
                     </div>
                     <div class="title">
                         <div class="profilename">
-                            <p>Sok Nhok</p>
+                            <h6 style="font-size: 20px;font-weight:bold;">Sok Nhok</h6>
                         </div>
                         <div class="date">
                             <p><?php echo $post['dateofposts'];?></p>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="headerright">
                     <div class="btn-edit">
-                        <a href="edit_view.php?id=<?php echo $post['id'];?>"><button>edit</button></a>
+                        <a href="edit_view.php?id=<?php echo $post['id'];?>"><button>Edit</button></a>
                     </div>
                     <div class="btn-delete">
                         <a href="../controllers/delete_post.php?id=<?php echo $post['id']?>;"><button>delete</button></a>
@@ -58,7 +58,22 @@
             </div>
             <!-- body of card post cantain text or picture -->
             <div class="cardp-body">
-            <img src="../controllers/images/<?php echo $post["images"];?>" alt="">
+            <img src="../controllers/images/<?php echo $post["image"];?>" alt="">
+            </div>
+            <!-- comment-site -->
+            <div class="comment-site">
+                <div class="left">
+                    <div class="profile">
+                        <img src="../images/p2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="right">
+                    <form action="../controllers/comment.php" method="POST">
+                        <input type="text" name="comment-text" placeholder="Wrtie your comment here...">
+                        <input type="hidden" value="<?php echo $post['id'];?>" name="comment-postid">
+                        <a href="../models/comment.php echo $post['id'];?>"><button type="submit"><i class="bi bi-send-fill"></i></button></a>
+                    </form>
+                </div>
             </div>
             <!-- footer of card footer  -->
             <div class="cardp-footer">
@@ -66,8 +81,8 @@
                     <i class="bi bi-hand-thumbs-up"></i>
                     <p>55 K</p>
                 </div>
-                <div class="comment">
-                    <span class="glyphicon glyphicon-comment"></span>
+                <div class="commentbtn">
+                    <a href="comment_show.php?id=<?php echo $post['id'];?>"><span class="glyphicon glyphicon-comment"></span></a>
                    <p>200 K</p>
                 </div>
             </div>

@@ -3,7 +3,7 @@
  * Your code here
  */
 // database connection
-$db = new PDO("mysql:host=localhost;dbname=facebook_g6db", "root", "");
+require_once "database.php";
 /**
  * Get all items  
  * @return array of items 
@@ -54,17 +54,16 @@ function getItemById($id)
  */
 function createPosts($text, $img, $userid) {
     global $db;
-    $poststatement = $db->prepare("INSERT INTO posts(description, images, userid) values(:text, :img, :userid)");
+    $poststatement = $db->prepare("INSERT INTO posts(description, image, userid) values(:text, :image, :userid)");
     $poststatement->execute([
         ':text'=>$text,
-        ':img'=>$img,
+        ':image'=>$img,
         ':userid'=>$userid
     ]);
     return $poststatement->rowCount()==1;
 }
 
 // connect to database
-$db = new PDO("mysql:host=localhost;dbname=facebook_g6db", 'root', '');
 function returnallpostdata(){
     global $db;
     $statement = $db->query("SELECT*FROM posts;");
