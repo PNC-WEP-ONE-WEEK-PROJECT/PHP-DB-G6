@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <form action="" method="post">
 
                     <!-- input user name -->
-                        <input type="text" class="form-control" placeholder="User Name" name="username">
+                        <input type="text" class="form-control p-4" placeholder="User Name" name="username">
                         <small class="form-text text-danger"> <?php echo $user_name_error; ?></small>
 
                     <!-- input user passwords -->

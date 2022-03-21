@@ -1,11 +1,10 @@
-<?php session_start() ?>
 <?php
-
-require_once('../models/post.php');
+require_once "../models/post.php";
+$id = $_GET['id'];
 $text = $_POST['description'];
 $img = $_FILES['image']['name'];
-$userid = $_SESSION['user_id'];
-
+// $userid = $_SESSION['user_id'];
+require_once('../models/post.php');
 if (isset($_FILES['image'])) {
     $img = $_FILES['image']['name'];
     $tmp_name = $_FILES['image']['tmp_name'];
@@ -13,7 +12,7 @@ if (isset($_FILES['image'])) {
     $upload = move_uploaded_file($tmp_name, $local_image.$img);
 }
 if (!empty($img) or !empty($text)){
-    createPosts($text, $img, $userid);
+    // createPosts($text, $img, $userid);
+    editeUserPost($text, $id, $img);
 }
-
 header('location: ../views/user.php');

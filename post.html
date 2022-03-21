@@ -24,9 +24,10 @@
                 <label for="file" id="btnupload" class="btn btn-primary mt-3 mb-3">Upload Image</label>
                 <div id="display_image"><img></div>
                 <div class="d-flex justify-content-end mt-lg-5 " >
-                    <button type="submit" class="btn btn-primary m-2 fw-bold w-25">Post</button>
+                    <button type="submit" class="btn btn-primary m-2 fw-bold w-25" style="border-bottom: 1px solid rgb(156, 156, 156); font-weight: bold;">Post</button>
                     <button type="submit" class="btn btn-secondary m-2 fw-bold w-25" id="concel-post">Concel</button>
                 </div>
+                
             </form>
         </div>
     </div>
@@ -65,6 +66,7 @@
         buttonConcel.addEventListener("onclick", e=>{
             document.querySelector('textarea').value='';
             document.querySelector('img').src='';
+            document.getElementsByClassName()
         })
     </script>
     

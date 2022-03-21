@@ -152,7 +152,7 @@
 <?php require_once('../templates/header.php');?>
 
     <!-- container -->
-    <div class="container">
+    <div class="containeri">
         <!-- header container -->
         <div class="header-container">
             <h1>Facebook</h1>

@@ -27,6 +27,17 @@ function getid()
     $items = $statement->fetchAll();
     return $items;
 }
+/**
+ * Get all items  
+ * @return array of items 
+ */
+function getIdOfEachPost()
+{
+    global $db;
+    $statement = $db->query("SELECT id  FROM users");
+    $items = $statement->fetchAll();
+    return $items;
+}
 
 /**
  * Get a single item
@@ -38,6 +49,21 @@ function getItemById($id)
 {
     global $db;
     $statement = $db->prepare("SELECT * FROM users WHERE id = :id");
+    $statement->execute([
+        ':id' => $id
+    ]);
+    return $statement->fetch();
+}
+/**
+ * Get a single item
+ * @param integer $id : the item id
+ 
+ * @return associative_array: the item related to given item id
+ */
+function getOnePostById($id)
+{
+    global $db;
+    $statement = $db->prepare("SELECT * FROM posts WHERE id = :id");
     $statement->execute([
         ':id' => $id
     ]);
@@ -75,12 +101,67 @@ function createPosts($text, $img, $userid) {
         ':img'=>$img,
         ':userid'=>$userid
     ]);
-    // if (isset($_FILES['image'])) {
-    //     $name_file = $_FILES['image']['name'];
-    //     $tmp_name = $_FILES['image']['tmp_name'];
-    //     $local_image="images/";
-    //     $upload = move_uploaded_file($tmp_name, $local_image.$img);
-    // }
-    // move_uploaded_file($_FILES['image']['tmp_name'], "images/uploads/$img");
     return $poststatement->rowCount()==1;
+}
+
+// connect to database
+$db = new PDO("mysql:host=localhost;dbname=facebook_g6db", 'root', '');
+function returnallpostdata(){
+    global $db;
+    $statement = $db->query("SELECT*FROM posts;");
+    $posts = $statement->fetchAll();
+    return $posts;
+}
+
+// delete user post
+function deleteUserPost($postId){
+    global $db;
+    $statement = $db->prepare("DELETE FROM posts WHERE id=:post_id;");
+    $statement->execute([
+        ':post_id' => $postId
+    ]);
+    return($statement->rowCount()==1);
+}
+
+
+// edite user post
+function editeUserPost($description, $id, $img){
+    global $db;
+    $statement =  $db->prepare("UPDATE  posts set description=:description,image=:img where id=:id");
+    $statement ->execute([
+        ':description'=> $description,
+        ':id' => $id,
+        ':img'=>$img
+    ]);
+    return $statement->rowCount()==1;
+}
+
+// add friends
+function addFriends($userid, $friend_id) {
+    global $db;
+    $poststatement = $db->prepare("INSERT INTO friends(user_id, friend_id) values(:user_id, :friend_id)");
+    $poststatement->execute([
+        ':user_id'=>$userid,
+        ':friend_id'=>$friend_id
+    ]);
+    return $poststatement->rowCount()==1;
+}
+
+// unfriends
+function unFriends($userid, $friend_id) {
+    global $db;
+    $poststatement = $db->prepare("DELETE FROM friends where user_id= :userid and friend_id = :friend_id");
+    $poststatement->execute([
+        ':userid'=>$userid,
+        ':friend_id'=>$friend_id
+    ]);
+    return $poststatement->rowCount()==1;
+}
+
+// get friends ID
+function returnFriendId(){
+    global $db;
+    $statement = $db->query("SELECT*FROM friends;");
+    $posts = $statement->fetchAll();
+    return $posts;
 }
