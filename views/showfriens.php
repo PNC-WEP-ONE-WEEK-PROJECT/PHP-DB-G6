@@ -54,7 +54,6 @@
                 </div>
                 <div class="col-lg-4 right d-flex gap-3">
                     <a href="../controllers/addFriend.php?id=<?php echo $user['id'] ?>" id="user<?php echo $user['id'] ?>"><button type="button" class="btn btn-primary btn-sm">add friend</button></a>
-                    <!-- <a href="../controllers/unfriend.php?id=<?php echo $user['id'] ?>" style="display:none" id="friend<?php echo $user['id'] ?>"><button type="button" class="btn btn-secondary btn-sm">Unfriends</button></a> -->
                     <a href="viewProfile.php?id=<?php echo $user['id'];?>"><button type="button" class="btn btn-primary btn-sm">view profile</button></a>
                 </div>
             </div>
