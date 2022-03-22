@@ -28,7 +28,7 @@ $data_user = getUserDataById($_SESSION['user_id'])
         <div class="align-items-center justify-content-center d-flex mt-5"  style="padding: 43px 0 0 0; z-index: 0;">
             <div class="w-100">
                 <div style="width: 100%; margin: 0;">
-                <div class="cover p-3" >
+                <div class="cover p-3" style="background-image: url(../controllers/images/<?php echo $user_data['cover'] ?>);">
                         <div class="dropdown dropstart border-1">
                                 <i class="bi bi-three-dots fs-1 text-secondary" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-cover"></i>
 
@@ -40,9 +40,7 @@ $data_user = getUserDataById($_SESSION['user_id'])
                 </div>
                 <div class="user-name align-items-center d-flex"><h4 id="username"><?php echo $user_data['name'] ?></h4></div>
                     <div class="profile-pic-div" style="z-index:0">
-                        <img id="photo" class="rounded-circle" src="../uploads/image-62296add80e539.04751305.jpg"  data-holder-rendered="true" alt="" srcset="">
-                        <input type="file" id="file" name="profile">
-                        <label for="file" id="uploadBtn">choose image</label>
+                        <img id="photo" class="rounded-circle" src="../controllers/images/<?php echo $user_data['profile_img'] ?>"  data-holder-rendered="true" alt="" srcset="">
                     </div>
                 </div>
                 <div class="user-infomation mt-4 p-3">
@@ -52,6 +50,7 @@ $data_user = getUserDataById($_SESSION['user_id'])
                     <div class="d-flex"><strong>Gender &#160&#160&#160:&#160&#160</strong><p><?php echo $user_data['gender'] ?></p id="user_gender"></div>
                     <div class="d-flex w-100 gap-2">
                     <a href="userFriends.php?id=<?php echo $user_data['id'];?>" class="btn btn-primary w-50 fw-bold" id="view-friends">Friends</a>
+                    <a href="setting.php?id=<?php echo $user_data['id'];?>" class="btn btn-primary w-50 fw-bold" id="view-friends">setting</a>
                         <button class="btn btn-primary w-50 fw-bold" type="button" id="create-post"><a href="create_post_view.php?id=<?php echo $user_data['id']?>">Create Post</a></button>
                     </div>
                 </div>
@@ -63,7 +62,7 @@ $data_user = getUserDataById($_SESSION['user_id'])
                 <div class=" bg-light mt-3 w-100 h-100 " style="border-radius: 5px;">
                     <div class="d-flex justify-content-between w-100 p-3">
                         <div class="d-flex align-items-center gap-4">
-                            <img src="../uploads/image-62296add80e539.04751305.jpg" class="rounded-circle" alt="Cinque Terre" style="height: 70px; width: 70px;">
+                            <img src="../controllers/images/<?php echo $user_data['profile_img'] ?>" class="rounded-circle" alt="Cinque Terre" style="height: 70px; width: 70px;">
                             <h5><strong><?php echo $user_data['name'] ?></strong></h5>
                         </div>
                         <div class="dropdown dropstart text-end border-1">
@@ -101,8 +100,7 @@ $data_user = getUserDataById($_SESSION['user_id'])
 
 
     
-
-    <!-- profile -->
+<!-- 
     <script>
         const imgDiv = document.querySelector('.profile-pic-div');
         const img = document.querySelector('#photo');
@@ -140,35 +138,13 @@ $data_user = getUserDataById($_SESSION['user_id'])
                 reader.readAsDataURL(choosedFile);
             }
         })
-    </script>
+    </script> -->
 
     <!-- cover -->
     <script>
-        const image_input = document.querySelector('#file_cover');
-        var uploaded_image = "";
-
-        image_input.addEventListener("change", function(){
-            const reader = new FileReader();
-            
-            reader.addEventListener("load", ()=>{
-                uploaded_image=reader.result;
-                let img = document.querySelector(".cover");
-                img.style.backgroundImage = "url("+ `${uploaded_image}`+")";
-                // console.log(`${uploaded_image}`);
-            });
-            reader.readAsDataURL(this.files[0]);
-            
-            })
-
-        function removeCover(){
-            console.log('Hello world how are you?')
-            let foobarElement = document.querySelector('.cover');
-            console.log(foobarElement)
-            foobarElement.style.backgroundImage = 'url()';
-            foobarElement.style.backgroundColor = 'white';
-            
-        }
-    </script>
+    //     let img = document.getElementByClassName(".cover");
+    //     img.style.backgroundImage = "url('8.PNG')";
+    // </script>
 
 
     

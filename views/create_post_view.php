@@ -32,7 +32,6 @@
                 <div class="d-flex justify-content-end mt-lg-5">
 
                 <!-- Button to click post -->
-                    <!-- <button type="submit" name="submit" class="btn btn-primary m-2 fw-bold w-25" value="upload">Post</button> -->
                     <input type="submit" name="submit" class="btn btn-primary m-2 fw-bold w-25" value="upload">
                 
                 <!-- button to click concel post -->

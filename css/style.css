@@ -41,7 +41,7 @@ img{
     /* margin-top: -15px; */
     height: 300px;
     width: 100%;
-    background-image: url('../uploads/image-62296af7108246.04371375.jpg');
+    /* background-image: url('../uploads/image-62296af7108246.04371375.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,6 +60,17 @@ img{
     position: absolute;
     top: 53%;
     left: 35%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(167, 167, 167);
+}
+.profile-pic{
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     overflow: hidden;

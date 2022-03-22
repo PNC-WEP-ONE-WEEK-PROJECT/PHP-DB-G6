@@ -35,7 +35,7 @@
 
 
         <div class="mt-3 p-3 card-post align-items-center justify-content-center d-flex">
-            <form action="../controllers/create_post.php" method="post" class="w-75" enctype="multipart/form-data" id="clearPost">
+            <form action="../controllers/create_post.php" method="post" class="w-75 " enctype="multipart/form-data" id="clearPost">
 
             <!-- The describtion of user post -->
                 <textarea type='text' class="p-2 mt-5" placeholder="Text" name="description"></textarea>
@@ -81,6 +81,7 @@
                 img.src = `${uploaded_image}`;
             });
             reader.readAsDataURL(this.files[0]);
+            document.getElementById
         })
     </script>
 

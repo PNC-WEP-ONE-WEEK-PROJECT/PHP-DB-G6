@@ -127,7 +127,7 @@ function deleteUserPost($postId){
 // edite user post
 function editeUserPost($description, $id, $img){
     global $db;
-    $statement =  $db->prepare("UPDATE  posts set description=:description,image=:img where id=:id");
+    $statement =  $db->prepare("UPDATE  posts SET description=:description,image=:img where id=:id");
     $statement ->execute([
         ':description'=> $description,
         ':id' => $id,
@@ -183,4 +183,65 @@ function getdatahidden (){
     $statement = $db->query("SELECT*FROM hidden");
     $data = $statement->fetchAll();
     return $data;
+}
+
+// change user infomation
+function changeUserinfo($username,$gender,$email,$date,$location,$userid){
+    global $db;
+    $statement = $db->prepare("UPDATE users SET name=:username,gender=:gender,email=:email,locationaddress=:location,dateofbirth=:date where id=:userid");
+            $statement->execute([
+                ':username' => $username,
+                ':gender' => $gender,
+                ':email' => $email,
+                ':date' => $date,
+                ':location' => $location,
+                ':userid' => $userid
+            ]);
+            return $statement->rowCount()==1;
+}
+// change user infomation cover profile
+function changeUserinfoAndCoverProfile($username,$gender,$email,$date,$location,$cover,$profile_img,$userid){
+    global $db;
+    $statement = $db->prepare("UPDATE users SET name=:username,gender=:gender,email=:email,locationaddress=:location,dateofbirth=:date, cover=:cover, profile_img=:profile_img where id=:userid");
+            $statement->execute([
+                ':username' => $username,
+                ':gender' => $gender,
+                ':email' => $email,
+                ':date' => $date,
+                ':location' => $location,
+                ':cover' => $cover,
+                ':profile_img' => $profile_img,
+                ':userid' => $userid
+            ]);
+            return $statement->rowCount()==1;
+}
+// change user infomation profile
+function changeUserinfoAndProfile($username,$gender,$email,$date,$location,$profile_img,$userid){
+    global $db;
+    $statement = $db->prepare("UPDATE users SET name=:username,gender=:gender,email=:email,locationaddress=:location,dateofbirth=:date, profile_img=:profile_img where id=:userid");
+            $statement->execute([
+                ':username' => $username,
+                ':gender' => $gender,
+                ':email' => $email,
+                ':date' => $date,
+                ':location' => $location,
+                ':profile_img' => $profile_img,
+                ':userid' => $userid
+            ]);
+            return $statement->rowCount()==1;
+}
+// change user infomation cover
+function changeUserinfoAndCover($username,$gender,$email,$date,$location,$cover,$userid){
+    global $db;
+    $statement = $db->prepare("UPDATE users SET name=:username,gender=:gender,email=:email,locationaddress=:location,dateofbirth=:date, cover=:cover where id=:userid");
+            $statement->execute([
+                ':username' => $username,
+                ':gender' => $gender,
+                ':email' => $email,
+                ':date' => $date,
+                ':location' => $location,
+                ':cover' => $cover,
+                ':userid' => $userid
+            ]);
+            return $statement->rowCount()==1;
 }
