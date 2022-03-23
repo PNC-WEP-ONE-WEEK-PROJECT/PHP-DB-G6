@@ -43,7 +43,7 @@
                     </div>
                     <div class="col-lg-4 right d-flex gap-3">
                         <a href="../controllers/unfriend.php?id=<?php echo $friend['friend_id'] ?>"><button type="button" class="btn btn-secondary btn-sm">Unfriends</button></a>
-                        <a href="viewProfile.php"><button type="button" class="btn btn-primary btn-sm">view profile</button></a>
+                        <a href="viewProfile.php?id=<?php echo $friend['friend_id'] ?>"><button type="button" class="btn btn-primary btn-sm">view profile</button></a>
                     </div>
                 </div>
             <?php } ?>

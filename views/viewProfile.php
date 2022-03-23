@@ -23,7 +23,11 @@ $data_user = getUserDataById($_GET['id'])
                 <div style="width: 100%; margin: 0;">
                 <div class="cover p-3" >
                 </div>
-                <div class="user-name align-items-center d-flex"><h4 id="username"><?php echo $user_data['name'] ?></h4></div>
+                <div class="user-name align-items-center d-flex"><h4 id="username"><?php 
+                    if ($user_data['id']==$_GET['id']){
+                        echo $user_data['name'];
+                    }
+                ?></h4></div>
                     <div class="profile-pic-div" style="z-index:0">
                         <img id="photo" class="rounded-circle" src="../uploads/image-62296add80e539.04751305.jpg"  data-holder-rendered="true" alt="" srcset="">
                         <input type="file" id="file" name="profile">
@@ -35,10 +39,6 @@ $data_user = getUserDataById($_GET['id'])
                     <div class="d-flex"><strong>Location &#160:&#160&#160</strong><p><?php echo $user_data['locationaddress'] ?></p id="user_location"></div>
                     <div class="d-flex"><strong>Datebirth:&#160&#160</strong><p><?php echo $user_data['dateofbirth'] ?></p id="user_datebirth"></div>
                     <div class="d-flex"><strong>Gender &#160&#160&#160:&#160&#160</strong><p><?php echo $user_data['gender'] ?></p id="user_gender"></div>
-                    <div class="d-flex w-100 gap-2">
-                        <button class="btn btn-primary w-50 fw-bold" type="button" id="view-friends"><a href="showfriens.php">Friends</a></button>
-                        <button class="btn btn-primary w-50 fw-bold" type="button" id="create-post"><a href="create_post_view.php?id=<?php echo $user_data['id']?>">Create Post</a></button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -51,14 +51,6 @@ $data_user = getUserDataById($_GET['id'])
                             <img src="../uploads/image-62296add80e539.04751305.jpg" class="rounded-circle" alt="Cinque Terre" style="height: 70px; width: 70px;">
                             <h5><strong><?php echo $user_data['name'] ?></strong></h5>
                         </div>
-                        <div class="dropdown dropstart text-end border-1">
-                            <i class="bi bi-three-dots m-1 fs-3 text-secondary" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-cover"></i>
-
-                            <ul class="dropdown-menu" id="cover-dropdown" aria-labelledby="dropdownMenuButton1">
-                                <li id="remove_cover"><a class="dropdown-item" href="../controllers/delete_user_post.php?id=<?php echo $data['id'];?>">Delete Post</a></li>
-                                <li><a class="dropdown-item" href="edite_create_post_view.php?id=<?php echo $data['id'];?>">Update Post</a></li>
-                            </ul>
-                        </div>
                     </div>
                     <div class="w-100 h-75">
                         <p class="mt-1" style="margin: 0 20px 0 20px;"><?php echo $data['description'] ?></p>
@@ -68,12 +60,12 @@ $data_user = getUserDataById($_GET['id'])
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="cardp-footer d-flex justify-content-around" >
-                        <div class="like">
+                    <div class="cardp-footer d-flex justify-content-around"  style="text-align: center; margin-top:10px; background:grey; color:white;">
+                        <div class="like" style= "margin:auto; width:50%; margin-top:10px;">
                             <i class="bi bi-hand-thumbs-up fs-2"></i>
                             <p>55 K</p>
                         </div>
-                        <div class="comment">
+                        <div class="comment" style= "margin:auto; width:50%; margin-top:10px">
                             <i class="bi bi-chat-left-text fs-3"></i>
                             <p>200 K</p>
                         </div>

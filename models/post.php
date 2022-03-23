@@ -96,7 +96,6 @@ function getUserDataById($id)
 function createPosts($text, $img, $userid) {
     global $db;
     $poststatement = $db->prepare("INSERT INTO posts(description, image, userid) values(:text, :image, :userid)");
-    $poststatement = $db->prepare("INSERT INTO posts(description, image, userid) values(:text, :img, :userid)");
     $poststatement->execute([
         ':text'=>$text,
         ':image'=>$img,
@@ -132,6 +131,16 @@ function editeUserPost($description, $id, $img){
         ':description'=> $description,
         ':id' => $id,
         ':img'=>$img
+    ]);
+    return $statement->rowCount()==1;
+}
+// edite user post
+function editeUserPostWithoutimage($description, $id){
+    global $db;
+    $statement =  $db->prepare("UPDATE  posts SET description=:description where id=:id");
+    $statement ->execute([
+        ':description'=> $description,
+        ':id' => $id,
     ]);
     return $statement->rowCount()==1;
 }

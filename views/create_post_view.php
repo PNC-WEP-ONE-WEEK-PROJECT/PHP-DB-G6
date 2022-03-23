@@ -15,7 +15,7 @@
 
 
         <div class="mt-3 p-3 card-post align-items-center justify-content-center d-flex">
-            <form action="../controllers/create_post.php" method="post" class="w-75" enctype="multipart/form-data">
+            <form action="../controllers/create_post.php?id=<?php echo $_SESSION['user_id'] ?>" method="post" class="w-75" enctype="multipart/form-data">
 
             <!-- The describtion of user post -->
                 <textarea type='text' class="p-2 mt-5" placeholder="Text" name="description"></textarea>

@@ -28,15 +28,15 @@ $data_user = getUserDataById($_SESSION['user_id'])
         <div class="align-items-center justify-content-center d-flex mt-5"  style="padding: 43px 0 0 0; z-index: 0;">
             <div class="w-100">
                 <div style="width: 100%; margin: 0;">
-                <div class="cover p-3" style="background-image: url(../controllers/images/<?php echo $user_data['cover'] ?>);">
-                        <div class="dropdown dropstart border-1">
+                <div class="cover p-3 bg-light" style="background-image: url(../controllers/images/<?php echo $user_data['cover'] ?>); ">
+                        <!-- <div class="dropdown dropstart border-1">
                                 <i class="bi bi-three-dots fs-1 text-secondary" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-cover"></i>
 
                                 <ul class="dropdown-menu" id="cover-dropdown" aria-labelledby="dropdownMenuButton1">
                                     <li id="remove_cover"><a class="dropdown-item" href="#" onclick="removeCover()">Remove Cover</a></li>
                                     <li><a class="dropdown-item" href="#"><input type="file" id="file_cover" name="cover" hidden><label for="file_cover">Change Cover</label></a></li>
                                 </ul>
-                        </div>
+                        </div> -->
                 </div>
                 <div class="user-name align-items-center d-flex"><h4 id="username"><?php echo $user_data['name'] ?></h4></div>
                     <div class="profile-pic-div" style="z-index:0">
@@ -82,14 +82,14 @@ $data_user = getUserDataById($_SESSION['user_id'])
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="cardp-footer d-flex justify-content-around" >
-                        <div class="like">
-                            <i class="bi bi-hand-thumbs-up fs-2"></i>
-                            <p>55 K</p>
+                    <div class="cardp-footer d-flex justify-content-around"  style="text-align: center; margin-top:10px; color:white; border-top:1px solid gray">
+                        <div class="like" style= "margin:auto; width:50%; margin-top:10px;">
+                            <i class="bi bi-hand-thumbs-up fs-2 text-dark"></i>
+                            <p class="text-dark">55 K</p>
                         </div>
-                        <div class="comment">
-                            <i class="bi bi-chat-left-text fs-3"></i>
-                            <p>200 K</p>
+                        <div class="comment" style= "margin:auto; width:50%; margin-top:10px">
+                            <i class="bi bi-chat-left-text fs-3 text-dark"></i>
+                            <p class="text-dark">200 K</p>
                         </div>
                     </div>
                 </div>

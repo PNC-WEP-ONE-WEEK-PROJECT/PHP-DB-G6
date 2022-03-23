@@ -11,7 +11,11 @@ if (isset($_FILES['image'])) {
     $local_image="images/";
     $upload = move_uploaded_file($tmp_name, $local_image.$img);
 }
-if (!empty($img) or !empty($text)){
+if (empty($img)){
+    // createPosts($text, $img, $userid);
+    editeUserPostWithoutimage($text, $id);
+}
+if (!empty($img)){
     // createPosts($text, $img, $userid);
     editeUserPost($text, $id, $img);
 }

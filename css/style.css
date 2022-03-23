@@ -154,8 +154,8 @@ img{
 }
 .cardp {
     width: 100%;
-    background-color: rgb(173, 170, 165);
-    margin: 100px auto auto auto;
+    background-color: rgb(194, 194, 194);
+    margin: 10px auto auto auto;
     display: flex;
     flex-wrap: wrap;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -179,8 +179,9 @@ img{
     margin: 10px auto;
     padding: 20px;
 }
-.cardp .cardp-header .headerleft .profile {
-    width: 25%;
+.cardp .cardp-header .headerleft .profile{
+    width: 70px;
+    height: 70px;
 }
 .cardp .cardp-header .headerleft .profile img {
     border-radius: 50%;

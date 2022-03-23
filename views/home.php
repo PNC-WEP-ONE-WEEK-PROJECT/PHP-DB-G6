@@ -1,6 +1,9 @@
+<?php session_start(); ?>
 
  <?php
     require_once "../templates/header.php";
+    require_once "../models/post.php";
+    $userprofile = getItemById($_SESSION['user_id']);
  ?>
 
 <body class="d-flex justify-content-center" style="background-color: rgb(209, 209, 209);">
@@ -17,9 +20,6 @@
         <!-- container header -->
         <div class="container-header">
             <div class="navbar">
-            <?php 
-            require_once "../templates/header.php"
-            ?>
             </div>
         </div>
         <?php
@@ -44,7 +44,7 @@
             <div class="cardp-header">
                 <div class="headerleft">
                     <div class="profile">
-                        <img src="../images/p2.jpg" width="50%">
+                        <img src="../controllers/images/<?php echo $userprofile['profile_img'] ?>" width="50%">
                     </div>
                     <div class="title">
                         <div class="profilename">
@@ -66,9 +66,11 @@
                 <p><?php echo $post['description']; ?></p>
             </div>
             <!-- body of card post cantain text or picture -->
-            <div class="cardp-body">
-            <img src="../controllers/images/<?php echo $post["image"];?>" alt="">
-            </div>
+            <?php if (!empty($post["image"])) { ?>
+                <div class=" w-100 h-100">
+                <img src="../controllers/images/<?php echo $post["image"];?>" alt="">
+                </div>
+            <?php } ?>
             <!-- comment-site -->
             <div class="comment-site">
                 <div class="left">
