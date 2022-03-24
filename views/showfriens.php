@@ -3,6 +3,8 @@
     require_once "../templates/header.php";
     require_once "../models/post.php";
     $friends = returnFriendId();
+    require_once "../models/showpeople.php";
+    $users = returnallusersdata();
 ?>
 <body class="d-flex justify-content-center" style="background-color: rgb(209, 209, 209);">
 <div class="contianer-showpage w-50">
@@ -23,8 +25,6 @@
                 </div>
             </div>
             <?php
-                require_once "../models/showpeople.php";
-                $users = returnallusersdata();
                 foreach ($users as $user):
                 
             ?>

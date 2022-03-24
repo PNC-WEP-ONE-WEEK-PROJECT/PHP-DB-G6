@@ -35,7 +35,7 @@
                     <input type="submit" name="submit" class="btn btn-primary m-2 fw-bold w-25" value="upload">
                 
                 <!-- button to click concel post -->
-                    <button type="button" class="btn btn-secondary m-2 fw-bold w-25"><a href="create_post_view.html" >Concel</a></button>
+                    <button type="button" class="btn btn-secondary m-2 fw-bold w-25"><a href="create_post_view.html" class="text-light" >Concel</a></button>
                 </div>
             </form>
         </div>

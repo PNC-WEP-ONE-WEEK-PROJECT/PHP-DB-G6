@@ -47,10 +47,10 @@ $userData = getItemById($id);
                                 <input type="text" placeholder="Gender" class="p-2 form-control w-25" style="border: none; border-bottom: 1px solid rgb(177, 177, 177);" value="<?php echo $userData['gender'] ?>" name="usergender">
                             </div>
                             <div class="d-flex justify-content-end mt-5 gap-2" >
-                                <button type="submit" name="submit" class="btn btn-primary fw-bold w-25" value="upload"></button>
+                                <button type="submit" name="submit" class="btn btn-primary fw-bold w-25" value="upload">Change</button>
                             
                             <!-- button to click concel post -->
-                                <button type="button" class="btn btn-secondary fw-bold w-25"><a href="user.php" >Concel</a></button>
+                                <button type="button" class="btn btn-secondary fw-bold w-25"><a href="user.php" class="text-light" >Concel</a></button>
                             </div>
             </form>
         </div>

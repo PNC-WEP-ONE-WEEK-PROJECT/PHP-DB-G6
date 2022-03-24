@@ -289,12 +289,14 @@ img{
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    padding: 50px 0px;
 }
 .containeri .header-container {
     width: 70%;
     margin: auto;
 }
 .containeri .body-container {
+    padding: 50px 0px;
     width: 75%;
     margin: auto;
     display: flex;
@@ -339,7 +341,7 @@ img{
     border: none;
 }
 .containeri .body-container form .btn-g {
-    width: 80%;
+    width: 96%;
     text-align: end;
     margin-top: 10px;
 }
@@ -348,7 +350,7 @@ img{
     border: none;
     color: black;
     border-radius: 10px;
-    margin: 10px;
+    margin: 5px;
     cursor: pointer;
     text-decoration: none;
 }

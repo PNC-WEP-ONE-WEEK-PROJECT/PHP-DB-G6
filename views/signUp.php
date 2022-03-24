@@ -154,9 +154,9 @@
     <!-- container -->
     <div class="containeri">
         <!-- header container -->
-        <div class="header-container">
+        <!-- <div class="header-container">
             <h1>Facebook</h1>
-        </div>
+        </div> -->
         <!-- body container -->
         <div class="body-container bg-primary">
             <div class="title-container">
@@ -188,17 +188,17 @@
                     <small class="form-text text-danger"> <?php echo $errorgender; ?></small>
                 </div>
 
-                <div class="input-g2">
+                <div class="input-g2 text-dark">
                     <input type="text" name="email" id="email" placeholder="Email address">
                     <small class="form-text text-danger"> <?php echo $erroremail; ?></small>
                 </div>
-                <div class="input-g2">
-                    <input type="text" name="location" id="location" placeholder="Location address">
+                <div class="input-g2 text-dark">
+                    <input type="text" name="location" class="text-dark" id="location" placeholder="Location address">
                     <small class="form-text text-danger"> <?php echo $errorlocation; ?></small>
                 </div>
                 <div class="btn-g">
-                    <button class="creat-acc">Create Account</button>
-                    <button class="log-in"><a href="../index.php">Log In</a></button>
+                    <button class="creat-acc btn btn-light fw-bold text-dark w-25">Create</button>
+                    <button class="log-in btn btn-light fw-bold text-dark w-25"><a href="../index.php">LogIn</a></button>
                 </div>
             </form>
         </div>

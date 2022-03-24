@@ -29,17 +29,9 @@ $data_user = getUserDataById($_SESSION['user_id'])
             <div class="w-100">
                 <div style="width: 100%; margin: 0;">
                 <div class="cover p-3 bg-light" style="background-image: url(../controllers/images/<?php echo $user_data['cover'] ?>); ">
-                        <!-- <div class="dropdown dropstart border-1">
-                                <i class="bi bi-three-dots fs-1 text-secondary" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-cover"></i>
-
-                                <ul class="dropdown-menu" id="cover-dropdown" aria-labelledby="dropdownMenuButton1">
-                                    <li id="remove_cover"><a class="dropdown-item" href="#" onclick="removeCover()">Remove Cover</a></li>
-                                    <li><a class="dropdown-item" href="#"><input type="file" id="file_cover" name="cover" hidden><label for="file_cover">Change Cover</label></a></li>
-                                </ul>
-                        </div> -->
                 </div>
                 <div class="user-name align-items-center d-flex"><h4 id="username"><?php echo $user_data['name'] ?></h4></div>
-                    <div class="profile-pic-div" style="z-index:0">
+                    <div class="profile-pic-div mt-5" style="z-index:0">
                         <img id="photo" class="rounded-circle" src="../controllers/images/<?php echo $user_data['profile_img'] ?>"  data-holder-rendered="true" alt="" srcset="">
                     </div>
                 </div>
@@ -51,7 +43,7 @@ $data_user = getUserDataById($_SESSION['user_id'])
                     <div class="d-flex w-100 gap-2">
                     <a href="userFriends.php?id=<?php echo $user_data['id'];?>" class="btn btn-primary w-50 fw-bold" id="view-friends">Friends</a>
                     <a href="setting.php?id=<?php echo $user_data['id'];?>" class="btn btn-primary w-50 fw-bold" id="view-friends">setting</a>
-                        <button class="btn btn-primary w-50 fw-bold" type="button" id="create-post"><a href="create_post_view.php?id=<?php echo $user_data['id']?>">Create Post</a></button>
+                        <button class="btn btn-primary w-50 fw-bold" type="button" id="create-post"><a href="create_post_view.php?id=<?php echo $user_data['id']?>" class="text-light">Create Post</a></button>
                     </div>
                 </div>
             </div>

@@ -20,17 +20,7 @@
             <!-- show friends container -->
             <div class="cotianer-showfriends d-flex justify-content-center" >
                 <div class="title font-weight-bold" style="padding: 30px 0px 5px 40px; border-bottom: 1px solid rgb(156, 156, 156); width:90%; font-weight: bold;">
-                    People
-                    <?php
-                        require_once "../models/showpeople.php";
-                        $users = returnallusersdata();
-                        $count = 0;
-                        foreach($users as $user){
-                            $count += 1;
-                        }
-                        echo $count
-                    ?>
-                    here that you may know and you can add as friends
+                    <h5><strong>View your friends here</strong></h5>
                 </div>
             </div>
             <?php foreach($userFriends as $friend) {?>
